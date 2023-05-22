@@ -1,0 +1,1266 @@
+:root {
+    --c-blue: #0075ff;
+    --c-blue-alt: #0d69d5;
+    --c-orange: #f59e0b;
+    --c-green: #22c55e;
+    --c-red: #f44336;
+    --c-dark-red:#c4291e;
+    --c-grey: #888;
+    --c-facebook: #4267B2;
+    --c-youtube: #FF0000;
+    --c-linkedin: #0A66C2;
+    --c-insta: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);;
+    --c-purple:#591586;
+    
+}
+* {
+    box-sizing: border-box;
+    font-weight: 500;
+}
+body {
+    font-family: "cairo";
+    margin: 0;   
+/*  font-family: "Typo Round Regular Demo"; */
+}   
+*:focus {
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.page {
+    background-color: #f1f5f9;
+    min-height: 100vh;
+}
+
+/*=================== Start Sidebar ===================*/
+.sidebar {
+    width: 250px;
+    box-shadow: 0 0 10px #DDD;
+}
+.sidebar > h3 {
+    margin-bottom: 50px;
+}
+
+.sidebar > h3::before,
+.sidebar > h3::after {
+    content: "";
+    background-color: black;
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+}
+
+.sidebar > h3::before {
+    width: 100px;
+    height: 2px;
+    bottom: -15px;
+
+}
+
+.sidebar > h3::after {
+    border: 4px solid white;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    bottom: -23px;
+}
+
+.sidebar ul li a{
+    position: relative;
+    transition: 0.2s;
+}
+
+.sidebar ul li a::before{
+    content: "";
+    position: absolute;
+    display: none;
+    background-color: black;
+    height: 100%;
+    width: 2px;
+    left: 0;
+    top: 0;
+}
+.sidebar ul li a:hover,
+.sidebar ul li a.active{
+    background-color: #f1f1f1;
+}
+.sidebar ul li a:hover::before,
+.sidebar ul li a.active::before{
+    display: block;
+}
+/*=================== End Sidebar ===================*/
+/*=================== Start Content  ===================*/
+
+.content {
+    overflow: hidden;
+}
+
+
+.head .search input {
+    border: 1px solid #ccc;
+    border-radius: 0 10px 10px 0;
+   
+    padding-left: 30px;
+    width: 150px;
+    transition: 0.3s;
+}
+.head .search input::placeholder{
+    transition: 0.2s;
+}
+
+.head .search::after{
+    content: "";
+    position: absolute;
+    background-color: black;
+    height: 100%;
+    width: 2px;
+    left: 5px;
+    top: 0;
+}
+
+.head .search::before {
+    font-family: "Font Awesome 6 Free";
+    content: "\f002";
+    font-weight: 900;
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-54%);
+    color: var(--c-grey);
+}
+.head .search input:focus {
+    width: 180px;
+}
+.head .search input:focus::placeholder{
+     opacity: 0;
+}
+
+.head .icons .notifications::before {
+    content: "";
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    border-radius: 50%;
+    border: 3px solid white;
+    width: 10px;
+    height: 10px;
+    background-color: var(--c-red);
+}
+
+
+.head .icons img {
+    width: 40px;
+    height: 40px;
+}
+
+
+.page h1 {
+    
+    margin-bottom: 40px;
+}
+
+.page .content .title::before,
+.page .content .title::after {
+    content:"";
+    height: 3px;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+
+}
+
+.page .content .title::before {
+    background-color: white;
+    width: 120px;
+}
+.page .content .title::after {
+    background-color: black;
+    width: 50px;
+}
+/*Change scroll bar style*/
+::-webkit-scrollbar {
+    width: 15px;
+    
+}
+::-webkit-scrollbar-track {
+    background-color: white;
+    
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--c-blue);
+    box-shadow: 0 0 20px #cccccc;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--c-blue-alt);
+    
+}
+/*End change scroll bar style*/
+
+
+.wrapper {
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr)) ;
+    margin: 0 20px;
+}   
+
+
+/*=================== Start welcome box  ===================*/
+
+
+
+.wrapper .welcome .welcome-img {
+    width: 200px;
+    margin-bottom: -10px;
+}
+.wrapper .welcome .intro {
+    border-bottom: 3px solid var(--c-blue);
+}
+
+
+.wrapper .welcome .body img {
+    width: 80px;
+    height: 80px;
+    border: 2px solid white;
+    position: absolute;
+    left: 30px;
+    top: -80px;
+    outline: 3px solid var(--c-blue);
+}
+
+.wrapper .welcome a{
+    display: block;
+    margin: 10px;
+    margin-left: auto;
+    width: fit-content;
+    transition: 0.2s;
+}
+.wrapper .welcome a:hover {
+    background-color: var(--c-blue-alt);
+}
+.wrapper .welcome .body > div {
+    flex: 1;
+}
+/*=================== End welcome box  ===================*/
+
+/*=================== Start queck draft box  ===================*/
+
+
+textarea {
+    min-height: 180px;
+    max-height: 180px;
+    min-width: 100%;
+    max-width: 100%;
+    border-color: var(--c-grey);
+}
+.wrapper .quick-draft .save {
+    transition: 0.2s;
+    display: block;
+    margin-left: auto;
+}
+.wrapper .quick-draft .save:hover {
+    background-color: var(--c-blue-alt);
+    cursor: pointer;
+}
+/*=================== End queck draft box  ===================*/
+
+/*=================== Start targets box  ===================*/
+
+.targets .target-row .icon{
+    width: 80px;
+    height: 80px;
+}
+
+.targets .details{
+    flex: 1;
+}
+.targets .progress{
+    height: 4px;
+}
+.targets .progress > span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+.targets .progress > span span{
+    top: -35px;
+    left: 100%;
+    transform: translateX(-50%);
+    box-shadow: 1px 1px 2px #bbb;
+}
+.targets .progress > span span::after{
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -9px;
+    border-color: transparent;
+    border-width: 5px;
+    border-style: solid;
+    border-top-color: var(--c-blue);
+}
+
+.targets .orange .progress > span span::after {
+    border-top-color: var(--c-orange)
+}
+
+.targets .red .progress > span span::after {
+    border-top-color: var(--c-red)
+}
+
+/*=================== End targets box  ===================*/
+
+/*=================== Start News box  ===================*/
+.wrapper .news-row:not(:last-of-type) {
+    border-bottom: 1px solid #eee;
+}
+.wrapper .news img {
+    width: 80px;
+    height: 50px;
+    filter: drop-shadow(2px 2px 5px #ccc);
+
+}
+.wrapper .news-row .details{
+    flex-grow: 1;
+}
+.wrapper .news-row .details p{
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+/*=================== End News box  ===================*/
+
+/*=================== Start Tasks box  ===================*/
+
+.wrapper .tasks .task-row:not(:last-of-type) {
+
+    border-bottom: 1px solid #eee;
+}
+
+
+/*=================== End Tasks box  ===================*/
+
+/*=================== Start Top Search box  ===================*/
+
+.wrapper .top-search .search-row:not(:last-of-type) {
+
+    border-bottom: 1px solid #eee;
+}
+/*=================== End Top Search box  ===================*/
+
+/*=================== Start Latest Uploads box  ===================*/
+.wrapper .latest-uploads .upload-row img {
+    width: 45px;
+    filter: drop-shadow(2px 2px 5px #ccc);
+}
+.wrapper .latest-uploads .upload-row:not(:last-of-type) {
+
+    border-bottom: 1px solid #eee;
+}
+
+/*=================== End Latest Uploads box  ===================*/
+
+
+/*=================== Start Set Transition ===================*/
+.wrapper .tickets .box,
+.wrapper .news .news-row,
+.wrapper .tasks .task-row,
+.wrapper .top-search .search-row,
+.wrapper .latest-uploads .upload-row {
+    transition: 0.2s;
+}
+/*=================== End Set Transition ===================*/
+
+.wrapper .tickets .box:hover,
+.wrapper .news .news-row:hover,
+.wrapper .tasks .task-row:hover,
+.wrapper .top-search .search-row:hover,
+.wrapper .latest-uploads .upload-row:hover {
+    background-color: #f3f3f3;
+}
+/*=================== Start Last Project Progress box  ===================*/
+.last-project-progress ul li {
+    position: relative;
+    border-left: 3px solid var(--c-blue);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.last-project-progress ul li::before {
+    content: "";
+    position: absolute;
+    left: -2px;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: white;
+    border: 3px solid white;
+    outline: 3px solid var(--c-blue);
+}
+
+
+.last-project-progress ul li.completed::before {
+    background-color: var(--c-blue);
+}
+.last-project-progress ul li.in-progress::before {
+    background-color: rgba(0, 119, 255, 0.4);
+    animation-name: processing;
+    animation-duration: 4s ;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    
+}
+
+.last-project-progress img {
+    position: absolute;
+    right: 50px;
+    bottom: 50px;
+    width: 300px;
+    height: 300px;
+    opacity: 0.1;
+}
+
+@keyframes processing {
+    0% {
+        background-color: white;
+    }
+    50% {
+        background-color: var(--c-blue);
+    }
+    100% {
+        background-color: white;
+    }
+}
+
+
+
+/*=================== End Last Project Progress box  ===================*/
+
+/*=================== Start Reminders box  ===================*/
+.reminders ul li{
+    position: relative;
+    padding-left: 20px;
+    border-left: 3px solid var(--c-blue);
+}
+.reminders ul li::before{
+    content: "";
+    position: absolute;
+    left: -35px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color:var(--c-blue);
+
+}
+
+.reminders ul li:nth-child(2) {
+    border-left-color: var(--c-green);
+}
+.reminders ul li:nth-child(2)::before {
+    background-color: var(--c-green);
+}
+.reminders ul li:nth-child(3) {
+    border-left-color: var(--c-orange);
+}
+.reminders ul li:nth-child(3)::before {
+    background-color: var(--c-orange);
+}
+.reminders ul li:nth-child(4) {
+    border-left-color: var(--c-red);
+}
+.reminders ul li:nth-child(4)::before {
+    background-color: var(--c-red);
+}
+
+
+/*=================== End Reminders box  ===================*/
+
+/*=================== Start Latest Post box  ===================*/
+.latest-post .header img {
+    width: 60px;
+    height: 60px;
+}
+
+
+
+/*=================== End Latest Post box  ===================*/
+
+/*=================== Start Social Media Stats box ===================*/
+.social .social-row .logo {
+    width: 70px;
+    height: 75px;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+}
+/*=================== End Social Media Stats box  ===================*/
+/*=================== End Wrapper  ===================*/
+
+
+/*=================== Start Projects Table  ===================*/
+
+.projects .responsive-table {
+    overflow-x: auto;
+    border-radius: 10px 10px 0 0;
+
+}
+
+.projects .responsive-table table {
+    min-width: 1000px;
+    overflow-x: auto;
+    border-spacing: 0;
+}
+.projects .responsive-table table thead td {
+    background-color: #eee;
+    font-weight: bold;
+}
+.projects .responsive-table table td {
+    padding: 15px;
+    
+}
+.projects .responsive-table table tbody td {
+    border-bottom: 1px solid #eee;
+    border-left: 1px solid #eee;
+}
+.projects .responsive-table table tbody td:last-child{
+    border-right: 1px solid #eee;
+}
+.projects .responsive-table table tr td img{
+    position: relative;
+    border: 3px solid white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+
+}
+.projects .responsive-table table tr td img:not(:nth-child(1)) {
+    margin-left: -20px;
+}
+.projects .responsive-table table tr td img:hover {
+    z-index: 1;
+}
+.projects .responsive-table table tbody tr td{
+    transition: 0.2s;
+}
+.projects .responsive-table table tbody tr td span{
+    font-family: 8px !important;
+    border-radius: 10px !important;
+}
+.projects .responsive-table table tbody tr:hover td {
+    background-color: #f8f8f8;
+}
+/*=================== End Projects Table  ===================*/
+/*=================== End Dashboard Page  ===================*/
+
+
+
+/*=================== Start Sittings Page  ===================*/
+
+
+/*=================== Start Checkbox Component  ===================*/
+.toggle-checkbox {
+   -webkit-appearance: none;
+    appearance: none; 
+}
+.lbl-checkbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: -20px;
+    width: 120px;
+    height: 35px;
+    cursor: pointer;
+}
+.toggle-checkbox{
+    position: absolute;
+}
+.toggle-switch {
+    position: relative;
+    width: 78px;
+    height: 34px; 
+    background-color: rgba(244, 67, 54, 0.2);
+    border-radius: 20px;
+    transition: 0.3s;
+}
+.toggle-switch::before {
+    font-family: "Font Awesome 6 Free";
+    content: "\f00d";
+    font-weight: 900;
+    font-size: 24px;
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    left: 3px;
+    top: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--c-red);
+    color: white;
+    border-radius: 50%;
+    box-shadow: 0 0 5px #c5c5c5;
+    transition: .5s;
+}
+.toggle-checkbox:checked +.toggle-switch {
+    background-color: var(--c-blue);
+}
+.toggle-checkbox:checked + .toggle-switch::before {
+    transform: rotateZ(360deg);
+    content: "\f00c";
+    left: 47px;
+    color: var(--c-blue);
+    background-color: white;
+}
+/*=================== End Checkbox Component ===================*/
+
+/*=================== Start General Info Box ===================*/
+.general-info input {
+    outline: none;
+    border: 1px solid #ddd;
+    font-size: 16px;
+}
+.general-info input[type="email"] {
+    background-color: #f7f7f7;
+
+}
+
+button {
+    border: none;
+    font-size: 16px;
+}
+button:hover {
+    cursor: pointer;
+}
+
+/*=================== End General Info Box ===================*/
+
+/*=================== Start Security Info Box ===================*/
+/*Button Style From Last Box*/
+
+.security-info div:not(:last-of-type) {
+    margin-top: 20px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+/*=================== End Security Info Box ===================*/
+
+/*=================== Start Social Info Box ===================*/
+
+.social-username {
+    height: 45px;
+}
+.social-username .logo{
+    height: 100%;
+    width: 50px;
+    font-size: 24px;
+    border: 1px solid #ddd;
+    background-color: #f7f7f7;
+    border-radius: 10px 0 0 10px;
+    border-right: none;
+}
+.social-username input{
+    border: 1px solid #ddd;
+    background-color: #f7f7f7;
+
+    height: 100%;
+    padding-left: 10px;
+    border-radius: 0 10px 10px 0;
+}
+/*=================== End Social Info Box ===================*/
+/*=================== Start Widgets Control Box ===================*/
+.widgets-control label input{
+    width: 15px;
+    margin-right: 5px;
+}
+.widgets-control label {
+    cursor: pointer;
+}
+/*=================== End Widgets Control Box ===================*/
+
+/*=================== Start Backup Manager Box ===================*/
+.backup-manager .backup-time .lbl-backup-time {
+    height: 40px;
+    cursor: pointer;
+}
+.backup-manager .backup-time{
+    padding-bottom: 10px; 
+    border-bottom: 1px solid #eee;
+}
+.backup-manager .lbl-backup-time input {
+    width: 20px;
+    height: 20px;
+}
+
+.backup-manager .backup-location input {
+    -webkit-appearance: none;
+    appearance: none;
+    position: absolute;
+}
+
+.backup-manager .backup-location label {
+    width: calc(100%);
+    margin: 10px 5px 0 5px;
+    cursor: pointer;
+}
+.backup-manager .backup-location .backup-location-custom {
+    border: 2px solid #ddd;
+    width: 100%;
+}
+
+.backup-manager .backup-location input:checked + .backup-location-custom {
+    border-color: var(--c-blue);
+    color: var(--c-blue);
+}
+/*=================== End Backup Manager Box ===================*/
+/*=================== End Sittings Page ===================*/
+
+/*=================== Start Profile Page ===================*/
+
+/*=================== Start Overview Box ===================*/
+.profile-page .overview .name-level{
+    width: 300px;
+}
+
+.profile-page .overview .name-level img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 3px solid white;
+    outline: 3px solid var(--c-blue);
+}
+.profile-page .overview .name-level .progress {
+    width: 70%;
+    margin: auto;
+    overflow: hidden;
+}
+.profile-page .overview .name-level .progress,
+.profile-page .overview .name-level .progress span {
+    height: 5px;
+    
+}
+.profile-page .overview .info {
+    flex-grow: 1;
+}
+.profile-page .overview .info span {
+    font-size: 18px;
+}
+.profile-page .overview .info .row:not(:last-of-type) {
+    border-bottom: 1px solid #ddd;
+}
+.profile-page .overview .info .row {
+    border-left: 1px solid #ddd;
+}
+.profile-page .overview .info .row .field{
+   width: 300px;
+}
+
+
+/*=================== End Overview Box ===================*/
+/*=================== Start My Skills Box ===================*/
+
+.profile-page .my-skills {
+    width: calc((100% / 3) - 40px);
+}
+.profile-page .other-data .latest-activities {
+    width: calc(((100% / 3) * 2) - 20px);
+}
+.profile-page .my-skills .skills-row:not(:last-of-type),
+.profile-page .other-data .latest-activities .activity-row:not(:last-of-type) {
+    border-bottom: 1px solid #eee;
+}
+.profile-page .other-data .latest-activities .activity-row {
+    gap: 5px;
+    
+}
+/*=================== End My Skills Box ===================*/
+/*=================== End Profile Page ===================*/
+
+/*=================== Start Projects Page ===================*/
+/*=================== Start Projects boxes ===================*/
+.projects-page .project-box .date {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    right: 10px;
+    top: 10px;
+}
+.projects-page .project-box .team img {
+    position: relative;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 3px solid white;
+}
+.projects-page .project-box .team img:not(:first-child) {
+    margin-left: -20px;
+}
+.projects-page .project-box .team img:hover {
+    z-index: 100;
+}
+.projects-page .project-box .amount .progress-bar {
+    width: 60%;
+    height: 10px;
+}
+.projects-page .project-box .amount .progress-bar span {
+    display: block;
+    height: 100%;
+}
+
+/*=================== End Projects boxes ===================*/
+/*=================== End Projects Page ===================*/
+
+/*=================== Start Courses Page ===================*/
+.courses-page ,
+.friends-page { 
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) ;
+
+}
+.courses-page .course-box {
+    overflow: hidden;
+}
+
+.courses-page .course-box .cover{
+    max-width: 100%;
+}
+
+
+.courses-page .course-box .instructor-img {
+    position: absolute; 
+    left: 20px; 
+    top: 20px; 
+    width:60px; 
+    height:60px; 
+    border:3px solid white; 
+    border-radius:50%;
+}
+
+.courses-page .course-box .details {
+    border-top: 1px solid #ddd;
+}
+
+
+.courses-page .course-box .details button{
+    position: absolute;
+    left: 50%;
+    top: -15px;
+    transform: translateX(-50%);
+}
+
+
+/*=================== End Courses Page ===================*/
+/*=================== Start Friends Page ===================*/
+.friends-page .friend .contact{
+    left: 15px;
+    top: 0;
+}
+
+.friends-page .vip::before {
+    content: "VIP";
+    position: absolute;
+    right: 20px;
+    bottom: 50px;
+    font-size: 85px;
+    color: #ff9e001f;
+}
+
+
+.friends-page .friend .img-p-info img {
+    border: 2px solid white;
+    outline: 2px solid var(--c-blue);
+    margin-top: 10px; 
+    width:100px; 
+    height:100px; 
+    border-radius:50%;
+}
+
+/*=================== End Friends Page ===================*/
+
+/*=================== Start Files Page ===================*/
+
+.files-boxes {
+    grid-template-columns: repeat(auto-fill, minmax(175px, 1fr)) ;
+    width: calc(100% - 250px);
+}
+
+.files-statistics {
+    width: 270px;    
+}
+
+.files-boxes .file .icon-name img {
+    width: 60px;
+}
+
+
+.files-container .files-statistics .row .img{
+    width: 40px;
+    height: 40px;
+
+}
+.files-container .files-statistics .row img{
+    width: 20px;
+
+}
+.files-container .files-statistics {
+    height: fit-content;
+}
+.files-container .files-statistics .upload{
+    width: fit-content;
+    margin: auto;
+
+}
+
+/*=================== End Files Page ===================*/
+
+.plans-page {
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr))
+}
+.plans-page .plan .name-price i {
+    position: absolute;
+    left: -15px;
+    top: 5px;
+}
+
+.plans-page .plan .name-price { 
+    border: 3px solid white;
+    outline: 3px solid white;
+
+}
+
+.plans-page .plan .name-price.free { 
+    outline-color: var(--c-green);
+}
+
+.plans-page .plan .name-price.basic {
+    outline-color: var(--c-blue);
+
+}
+.plans-page .plan .name-price.premium {
+    outline-color: var(--c-orange);
+
+}
+
+
+/*=================== Media in Phone Screen ===================*/
+@media (max-width: 767px) {
+
+   
+    /*=================== Start sidebar on mobile ===================*/
+    .sidebar {
+        width: 58px;
+        padding: 10px;
+    }
+    .sidebar > h3 {
+        font-size: 13px;
+        margin-bottom: 15px;
+    }
+    .sidebar > h3::before,
+    .sidebar > h3::after {
+        display: none;
+    }    
+
+    
+    /*=================== End sidebar on mobile ===================*/
+    /*=================== Start Head on mobile ===================*/
+    .head .icons .notifications::before {
+        top: -2px;
+        right: -2px;
+        width: 5px;
+        height: 5px;
+        border-width: 2px;
+    }
+
+
+    /*=================== End Head on mobile ===================*/
+
+    /*=================== Start boxes on mobile ===================*/
+    
+    .wrapper {
+        grid-template-columns: minmax(200px, 1fr) ;
+        margin:  0 10px !important;
+    }
+    .welcome .intro {
+        padding-bottom: 30px;
+    }
+    .wrapper .welcome .body img {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .wrapper .tickets .box {
+        width: 100%;
+    }
+
+    /*News on mobile*/
+
+    .news .news-row {
+        display: block;
+        padding-bottom: 20px !important;
+    }
+    .wrapper .news-row:not(:last-of-type){
+        margin-bottom: 20px !important;
+
+    }
+    .news .news-row img {
+        width: 85%;
+        height: auto;
+        margin: 0 auto;
+    }
+
+
+
+    .wrapper .latest-uploads .upload-row img {
+        width: 35px;
+    }
+
+    .last-project-progress ul li:not(:last-of-type) {
+        padding-left: 15px;
+        padding-bottom: 10px;
+    }
+    .last-project-progress ul li::before {
+        width: 10px;
+        height: 10px;
+        border-width: 2px;
+        outline-width: 2px;
+    }
+
+    .last-project-progress img {
+        right: 10px;
+        bottom: 10px;
+        width: 100px;
+        height: 100px;
+        opacity: 0.05;
+    }
+    .reminders ul li::before{
+        left: -25px;
+        width: 15px;
+        height: 15px;    
+    }
+    .social .social-row .logo {
+        width: 40px;
+        height: 40px;
+        padding: -10px;
+    }
+
+    .latest-post .header img {
+        width: 50px;
+        height: 50px;
+        margin-right: 10px;
+    }
+
+    .latest-post .footer i,
+    .social .social-row .logo i{
+        font-size: 18px;
+    }
+
+    .social .social-row span{
+        font-size: 8px !important;
+        padding: 7px;
+    }
+
+    /*========Start Toggle Switch In Mobile========*/
+    .lbl-checkbox {
+        width: 60px;
+        height: 20px;
+    }
+
+    .toggle-switch {    
+        margin-right: 10px;    
+        width: 32px;
+        height: 15px; 
+  
+    }
+    .toggle-switch::before {
+        position: absolute;
+        font-size: 10px;
+        left: 2px;
+        top: 2px;
+        width: 11px;
+        height: 11px;
+
+    }
+
+    .toggle-checkbox:checked + .toggle-switch::before {
+        transform: rotateZ(360deg);
+        content: "\f00c";
+        left: 19px;
+        color: var(--c-blue);
+    }
+    /*========End Toggle Switch In Mobile========*/
+    
+    /*========Start Button In Mobile========*/
+    button {
+        font-size: 10px;
+    }
+    /*========End Button In Mobile========*/
+    
+    /*========Start General Info In Mobile========*/
+    
+    .general-info input {
+        padding: 5px;
+        font-size: 10px;
+    }
+    
+    /*========End General Info In Mobile========*/
+    .social-username {
+        height: 40px;
+    }
+    .social-username .logo{
+        height: 100%;
+        width: 40px;
+        font-size: 18px;
+    }
+    /*=================== Start Widgets Control In Mobile ===================*/
+    .widgets-control label input{
+        width: 13px;
+        margin-right: 5px;
+    }
+
+    /*=================== End Widgets Control In Mobile ===================*/
+    
+    .backup-manager .backup-location{
+        flex-wrap: wrap;
+    }
+    /*=================== Start Profile Page In Mobile ===================*/
+    /*=================== Start Overview Box In Mobile ===================*/
+    .profile-page .overview {
+        flex-direction: column;
+        padding: 10px;
+        margin: 0 10px 20px;
+    }
+    .profile-page .overview .name-level img{
+        width: 150px;
+        height: 150px;
+        
+    }
+    .profile-page .overview .name-level{
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+        margin-right: 0;
+    }
+    
+    .profile-page .overview .info{
+        padding: 0;
+        width: 100%;
+    }
+    
+    .profile-page .overview .info .field {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .profile-page .overview .info h4 {
+        font-size: 14px;
+    }
+    .profile-page .overview .general-info {
+        margin: 0;
+
+    }
+    .profile-page .overview .info span {
+        font-size: 12px;
+    }
+    .profile-page .overview .info .row .field {
+        width: 100%;
+        margin: 0;
+    }
+    .profile-page .overview .info .row {
+        width: 90%;
+        margin: 0 auto;
+        border-left: none;
+        padding: 15px  0;
+    }
+    
+    .profile-page .other-data .my-skills{
+        margin-right: 10px;
+        margin-left: 10px;
+        width: 100%;
+    }
+    .profile-page .other-data .latest-activities { 
+        width: 100%;
+        margin: 0 10px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+
+    .profile-page .other-data .latest-activities .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+    }
+    .profile-page .other-data .latest-activities p {
+        font-size: 8px;
+    }
+
+
+    .profile-page .other-data .latest-activities i {
+        font-size: 14px;
+    }
+    
+
+    .projects-page .project-box .team img {
+        width: 35px;
+        height: 35px;
+        border-width: 2px;
+    }
+    .projects-page .project-box .technologies {
+        gap: 5px;
+    }
+    .projects-page .project-box .technologies p{
+        padding: 5px;
+        margin: 0;
+    }
+    .projects-page .project-box .amount {
+        margin-top: 10px;
+    }
+    .projects-page .project-box .amount .progress-bar {
+        width: 70%;
+        height: 5px;
+    }
+    .projects-page .project-box .amount .progress-bar span {
+        display: block;
+        height: 100%;
+    }
+
+    .courses-page,
+    .friends-page,
+    .files-boxes {
+        margin: 10px;
+    }
+
+
+    .friends-page {
+        grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    }
+
+    .friends-page .vip::before {
+        bottom: 40px;
+        font-size: 80px;
+    }
+    
+
+
+    .files-container {
+        flex-wrap: wrap-reverse;
+    }
+    .files-boxes {
+        width: 100%;
+
+    }
+    .files-container .files-statistics {
+        margin: 10px 10px 0;
+        width: 100%;
+    }
+
+
+    .plans-page {
+        grid-template-columns: minmax(200px, 1fr);
+    }
+}
+
+
